@@ -38,7 +38,7 @@ class Diffusion:
     def _extract(self, a, t, x_shape):
         """Pull out the coefficients for a batch of timesteps t and reshape
         so they broadcast against an image batch (B, C, H, W)."""
-        out = a.gather(-1, t.cpu()).to(t.device)
+        out = a.gather(-1, t)
         return out.reshape(t.shape[0], *((1,) * (len(x_shape) - 1)))
 
     def q_sample(self, x0, t, noise=None):
