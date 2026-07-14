@@ -25,6 +25,7 @@ def main():
     final = diffusion.sample(model, image_size=28, batch_size=args.n, channels=1)
 
     final = ((final + 1) / 2).clamp(0, 1)  # [-1,1] -> [0,1]
+    final = final.cpu()
     grid = make_grid(final, nrow=4)
 
     plt.figure(figsize=(6, 6))
