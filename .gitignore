@@ -1,0 +1,9 @@
+data/
+checkpoints/*.pt
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# keep the folder structure even though contents are ignored
+!checkpoints/.gitkeep
