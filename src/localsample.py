@@ -15,5 +15,5 @@ samples = diffusion.sample(model, image_size=28, batch_size=16, channels=1)
 # rescale to [0, 1] for saving as a viewable image
 samples = (samples.clamp(-1, 1) + 1) / 2
 
-save_image(samples, "samples/output.png", nrow=4)
+save_image(samples, "samples/output1.png", nrow=4)
 print("Saved to samples/output.png")
